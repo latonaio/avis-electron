@@ -1,0 +1,83 @@
+@import '../styles/common.scss';
+
+.Sidebar {
+  @extend %bump;
+  padding: 60px 0;
+
+  .container {
+    height: calc($containerHeight - 200px);
+    overflow: scroll;
+    border-top: 1px solid $grey300;
+    border-bottom: 1px solid $grey300;
+
+    @mixin eachIcon($color) {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+
+      h2 {
+        margin-bottom: 0;
+
+        button {
+          height: calc(($containerHeight - 218px) / 8);
+          font-size: 28px;
+          transition: 0.3s;
+          padding: 1rem 1.25rem;
+          width: 100%;
+
+          svg {
+            color: white;
+            background: $color;
+            font-size: 56px;
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 15px;
+          }
+
+          &:not(.collapsed) {
+            background: white;
+          }
+
+          &:focus {
+            box-shadow: none;
+            color: $grey900;
+          }
+
+          &:hover {
+            color: $blue600;
+          }
+        }
+      }
+
+      .itemBody {
+        background: $grey100;
+
+        .bodysItem {
+          @extend %center;
+          height: 80px;
+          font-size: 28px;
+          transition: 0.4s;
+          cursor: pointer;
+
+          &:hover {
+            @extend %bump;
+            color: $blue600;
+          }
+        }
+      }
+    }
+    .itemBlue {
+      @include eachIcon($blue500);
+    }
+    .itemPink {
+      @include eachIcon($pink500);
+    }
+    .itemOrange {
+      @include eachIcon($orange500);
+    }
+    .itemGreen {
+      @include eachIcon($green500);
+    }
+    .itemGrey {
+      @include eachIcon($grey400);
+    }
+  }
+}

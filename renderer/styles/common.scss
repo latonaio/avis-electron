@@ -1,0 +1,62 @@
+@import './colors.scss';
+
+$containerWidth: 1860px;
+$containerHeight: 980px;
+
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%dent {
+  background: $grey200;
+  box-shadow: inset -10px -10px 10px white, inset 10px 10px 10px rgb(0 0 0 / 0.16);
+  border-radius: 20px;
+}
+
+%bump {
+  background: $grey100;
+  box-shadow: -10px -10px 10px white, 10px 10px 10px rgb(0 0 0 / 0.16);
+  border-radius: 20px;
+}
+
+.inputNinja {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 32px;
+    margin: 35px 0 30px;
+    border: none;
+    border-bottom: 1px solid $grey300;
+    outline: none;
+    background: transparent;
+    transition: 0.5s;
+
+    &:focus {
+      @extend %bump;
+      border-radius: 10px;
+      border-bottom: none;
+    }
+  }
+  label {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    padding: 10px 0;
+    color: $grey900;
+    font-size: 32px;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: $blue600;
+    font-size: 26px;
+  }
+}

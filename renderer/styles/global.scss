@@ -1,0 +1,12 @@
+@import './common.scss';
+
+:root {
+  --app-scale-ratio: 1;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $grey200;
+  -webkit-app-region: drag;
+}

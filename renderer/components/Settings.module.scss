@@ -1,0 +1,95 @@
+@import '../styles/common.scss';
+
+.settings {
+  @extend %bump;
+  width: calc($containerWidth - 80px);
+  height: calc($containerHeight - 80px);
+  display: flex;
+
+  .backHome {
+    width: 100px;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+    border-right: 1px solid $grey300;
+    transition: 0.3s;
+    &:hover {
+      color: $blue600;
+      background: $blue50;
+      border-right: 1px solid $blue200;
+    }
+
+    &:hover .arrowBack {
+      animation: shake infinite 1.2s;
+    }
+    @keyframes shake {
+      0% {
+        margin-left: 25px;
+      }
+      100% {
+        margin-left: 0px;
+      }
+    }
+    .arrowBack {
+      margin-top: 15px;
+    }
+  }
+
+  .contents {
+    width: calc($containerWidth - 180px);
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .form {
+      display: flex;
+      gap: 50px;
+
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+
+    .buttons {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 20px;
+
+      @mixin eachButton($BGColor) {
+        @extend %bump;
+        width: 300px;
+        text-align: center;
+        font-size: 32px;
+        color: white;
+        background: $BGColor;
+        transition: 0.3s;
+        &:hover {
+          background: $grey100;
+        }
+        &:active {
+          box-shadow: inset -10px -10px 10px white, inset 10px 10px 10px rgb(0 0 0 / 0.16);
+        }
+      }
+      .button1 {
+        @include eachButton($grey400);
+        &:hover {
+          color: $grey900;
+          border: 1px solid $grey500;
+        }
+      }
+      .button2 {
+        @include eachButton($blue400);
+        &:hover {
+          color: $blue500;
+          border: 1px solid $blue500;
+        }
+      }
+    }
+  }
+}

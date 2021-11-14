@@ -1,0 +1,108 @@
+@import '../styles/common.scss';
+
+$leftWidth: calc(($containerWidth - 120px) * 1 / 4);
+$rightWidth: calc(($containerWidth - 120px) * 3 / 4);
+
+.box {
+  @extend %dent;
+  width: $containerWidth;
+  height: $containerHeight;
+  padding: 40px;
+  display: flex;
+  overflow: hidden;
+
+  .containerHome {
+    display: flex;
+    transition: 0.8s;
+
+    .left {
+      width: $leftWidth;
+      margin-right: 40px;
+    }
+
+    .right {
+      width: $rightWidth;
+      margin-right: 80px;
+
+      .top {
+        @extend %bump;
+        height: calc(($containerHeight - 120px) / 2);
+        padding: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .arrowBox {
+          position: relative;
+          width: 67%;
+          height: 100%;
+          background: white;
+          padding: 35px 70px;
+          border: 2px solid $grey400;
+          filter: drop-shadow(10px 10px 10px rgb(0 0 0 / 0.16));
+          font-size: 55px;
+          line-height: 1.6;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+
+          &:after,
+          &:before {
+            border: solid transparent;
+            content: '';
+            height: 0;
+            width: 0;
+            pointer-events: none;
+            position: absolute;
+            left: 100%;
+            top: 81%;
+          }
+
+          &:after {
+            border-top-width: 0;
+            border-bottom-width: 77px;
+            border-left-width: 77px;
+            margin-top: -79px;
+            margin-left: -1px;
+            border-left-color: white;
+          }
+
+          &:before {
+            border-top-width: 0;
+            border-bottom-width: 81px;
+            border-left-width: 81px;
+            margin-top: -81px;
+            border-left-color: $grey400;
+          }
+        }
+
+        .canon {
+        }
+      }
+
+      .bottom {
+        height: calc(($containerHeight - 120px) / 2);
+        display: flex;
+        gap: 40px;
+        &1,
+        &2,
+        &3 {
+          @extend %bump;
+          width: calc(($rightWidth - 80px) / 3);
+          height: 100%;
+        }
+
+        &3 {
+          @extend %center;
+          font-size: 100px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.moveToRight {
+  margin-left: -$containerWidth;
+}
