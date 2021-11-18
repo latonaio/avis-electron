@@ -1,4 +1,4 @@
-<p align="center"> <img src="https://user-images.githubusercontent.com/91356865/142383090-461c8d1d-0faa-45df-963b-163427cf1917.png" width="300" title="Empowers IoX from a piece of AI.">
+<p align="center"> <img src="https://user-images.githubusercontent.com/91356865/142383090-461c8d1d-0faa-45df-963b-163427cf1917.png" width="300">
 </p> <p align="center"></p>
 ***  
 
