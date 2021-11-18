@@ -1,3 +1,7 @@
+<p align="center"> <img src="https://user-images.githubusercontent.com/91356865/142383090-461c8d1d-0faa-45df-963b-163427cf1917.png" width="300" title="Empowers IoX from a piece of AI.">
+</p> <p align="center"></p>
+***  
+
 # avis-electron
 
 avis-electron は、Fluentdを用いてマイクロサービスログやアクセスログ、システムログ等を収集し、収集されたログから重要なログをピックアップしてUI上に表示する、[avis](https://github.com/latonaio/avis)のUIフロントエンドリソースです。  
